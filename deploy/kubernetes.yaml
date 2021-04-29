@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: myserver
-        image: localhost:5000/myserver:0.1
+        image: hokandil/myserver:0.1
         ports:
         - containerPort: 8080
 ---
