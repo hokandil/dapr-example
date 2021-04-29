@@ -1,38 +1,38 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: pyserver
+  name: myserver
   labels:
-    app: pyserver
+    app: myserver
 spec:
   selector:
-    app: pyserver
+    app: myserver
   ports:
     - port: 8080
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: pyserver
+  name: myserver
   labels:
-    app: pyserver
+    app: myserver
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pyserver
+      app: myserver
   template:
     metadata:
       labels:
-        app: pyserver
+        app: myserver
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/app-id: "pyserver"
+        dapr.io/app-id: "myserver"
         dapr.io/app-port: "8080"
     spec:
       containers:
-      - name: pyserver
-        image: localhost:5000/pyserver:0.1
+      - name: myserver
+        image: localhost:5000/myserver:0.1
         ports:
         - containerPort: 8080
 ---
@@ -46,5 +46,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: pyserver
+          serviceName: myserver
           servicePort: 8080
