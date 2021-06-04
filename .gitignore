@@ -1,4 +1,7 @@
 Myexample/commands
 Myexample/workspace.code-workspace
 Myexample/components/cosmosgraphdb.yaml
+<<<<<<< HEAD
 Myexample/components/cosmosgraphdb.yaml
+=======
+>>>>>>> c2fe715c4cb887a5dc86363415b3a2ccd3c36108
