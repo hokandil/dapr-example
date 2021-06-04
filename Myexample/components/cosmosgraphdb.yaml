@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: cosmosgraphdb
+spec:
+  type: bindings.azure.cosmosgraphdb
+  version: v1
+  metadata:
+  - name: url
+    value: 
+  - name: masterKey
+    value: 
+  - name: username
+    value: 
