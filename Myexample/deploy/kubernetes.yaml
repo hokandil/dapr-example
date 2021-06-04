@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myserver5
+  labels:
+    app: myserver5
+spec:
+  selector:
+    app: myserver5
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: myserver5
+  labels:
+    app: myserver5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myserver5
+  template:
+    metadata:
+      labels:
+        app: myserver5
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "myserver5"
+        dapr.io/app-port: "3000"
+        dapr.io/log-level: "debug"
+        dapr.io/sidecar-liveness-probe-delay-seconds: "10"
+        dapr.io/sidecar-readiness-probe-timeout-seconds: "10"
+    spec:
+      containers:
+      - name: myserver5
+        image: hokandil/myserver:0.5
+        ports:
+        - containerPort: 3000
