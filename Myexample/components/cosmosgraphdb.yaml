@@ -7,8 +7,8 @@ spec:
   version: v1
   metadata:
   - name: url
-    value: "wss://kandil-cosmosdb.gremlin.cosmos.azure.com:443/"
+    value: "wss://kdil-cosmosdb.gremlin.cosmos.azure.com:443/"
   - name: masterKey
-    value: 8jtU7EwaICxxbJu16IH1HU3EGbiJDFERkk7TcKdZ2cmlOWcYjknLFvCc1h0AypaRfXWwHMgLhvZUl6fokZH8WA==
+    value: 8jtU7EwaICxxbJu16IH1HU3EGbiJDFERkk7TcKdZ2cmlOpaRfXWwHMgLhvZUl6fokZH8WA==
   - name: username
     value: /dbs/graphdb/colls/Persons
